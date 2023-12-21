@@ -1,6 +1,6 @@
 import { Service } from "../models/serviceModel.js";
 
-const Services = async (req, res, next) => {
+export const Services = async (req, res, next) => {
   try {
     const response = await Service.find();
 
@@ -15,4 +15,3 @@ const Services = async (req, res, next) => {
   }
 };
 
-export default Services

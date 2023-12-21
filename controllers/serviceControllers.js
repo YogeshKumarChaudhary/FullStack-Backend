@@ -1,6 +1,6 @@
 import { Service } from "../models/serviceModel.js";
 
-export const Services = async (req, res, next) => {
+const Services = async (req, res, next) => {
   try {
     const response = await Service.find();
 
@@ -14,3 +14,5 @@ export const Services = async (req, res, next) => {
     // return res.status(500).json({ message: "Services not Fetched" });
   }
 };
+
+export default Services

@@ -1,6 +1,6 @@
-import { Service } from "../models/serviceModel.js";
+const  Service  = require("../models/serviceModel.js");
 
-export const ServicesController = async (req, res, next) => {
+const Services = async (req, res, next) => {
   try {
     const response = await Service.find();
 
@@ -15,3 +15,4 @@ export const ServicesController = async (req, res, next) => {
   }
 };
 
+module.exports = Services;

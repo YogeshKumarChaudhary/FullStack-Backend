@@ -1,7 +1,7 @@
-import jwt from "jsonwebtoken";
-import { User } from "../models/userModel.js";
+const jwt = require("jsonwebtoken");
+const  User  = require("../models/userModel.js");
 
-export const authMiddleware = async (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
   const token = req.header("Authorization");
   if (!token) {
     return res.status(401).json("Unauthorized HTTP, Token not Provided");
@@ -27,3 +27,5 @@ export const authMiddleware = async (req, res, next) => {
     console.log("authMiddleware Error", error);
   }
 };
+
+module.exports = authMiddleware;

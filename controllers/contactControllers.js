@@ -1,6 +1,6 @@
-import { Contact } from "../models/contactModel.js";
+const Contact  = require("../models/contactModel.js");
 
-export const contactForm = async (req, res, next) => {
+const contactForm = async (req, res, next) => {
   try {
     const contactDetails = await Contact(req.body).save();
     res
@@ -11,3 +11,5 @@ export const contactForm = async (req, res, next) => {
     console.log(error);
   }
 };
+
+module.exports = contactForm;

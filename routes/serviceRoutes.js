@@ -1,5 +1,8 @@
-import express from "express";
-import {ServicesController}  from "../controllers/servicecontrollers.js";
+const express = require("express");
 
-export const serviceRoutes = express.Router();
+const ServicesController  = require("../controllers/servicecontrollers.js");
+
+const serviceRoutes = express.Router();
 serviceRoutes.get("/service", ServicesController);
+
+module.exports = serviceRoutes;

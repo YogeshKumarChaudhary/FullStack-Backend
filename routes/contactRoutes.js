@@ -1,5 +1,8 @@
-import express from "express";
-import { contactForm } from "../controllers/contactControllers.js";
+const express = require("express");
 
-export const contactRoutes = express.Router();
+const contactForm  = require("../controllers/contactControllers.js");
+
+const contactRoutes = express.Router();
 contactRoutes.post("/contact", contactForm);
+
+module.exports = contactRoutes;

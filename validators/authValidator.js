@@ -1,6 +1,6 @@
-import z from "zod";
+const z = require("zod");
 
-export const logInSchema = z.object({
+const logInSchema = z.object({
   email: z
     .string({ required_error: "Email is Required" })
     .trim()
@@ -14,7 +14,7 @@ export const logInSchema = z.object({
     .max(100, { message: "password must not be more than 100 characters" }),
 });
 
-export const signUpSchema = logInSchema.extend({
+const signUpSchema = logInSchema.extend({
   username: z
     .string({ required_error: "Username is Required" })
     .trim()
@@ -27,3 +27,5 @@ export const signUpSchema = logInSchema.extend({
     .min(10, { message: "Phone must be at lest of 10 characters" })
     .max(20, { message: "Phone must not be more than 10 characters" }),
 });
+
+module.exports = { logInSchema, signUpSchema };

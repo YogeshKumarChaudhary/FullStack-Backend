@@ -1,8 +1,8 @@
-import { isValidObjectId } from "mongoose";
-import { User } from "../models/userModel.js";
-import bcrypt from "bcryptjs";
+// const { isValidObjectId } = require("mongoose");
+const  User  = require("../models/userModel.js");
+const bcrypt = require("bcryptjs");
 
-export const home = async (req, res) => {
+const home = async (req, res) => {
   try {
     res.status(200).send("Wellcome to router Home controller");
   } catch (error) {
@@ -10,7 +10,7 @@ export const home = async (req, res) => {
   }
 };
 
-export const register = async (req, res, next) => {
+const register = async (req, res, next) => {
   try {
     const { username, email, phone, password } = req.body;
     const emailCheck = await User.findOne({ email: email });
@@ -40,7 +40,7 @@ export const register = async (req, res, next) => {
   }
 };
 
-export const logIn = async (req, res, next) => {
+const logIn = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const isUserValid = await User.findOne({ email: email });
@@ -69,7 +69,7 @@ export const logIn = async (req, res, next) => {
   }
 };
 
-export const user = async (req, res) => {
+const user = async (req, res) => {
   try {
     const userData = req.user;
     // console.log(userData);
@@ -78,3 +78,5 @@ export const user = async (req, res) => {
     console.log("User Route", error);
   }
 };
+
+module.exports = { user, home, register, logIn };

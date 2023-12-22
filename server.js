@@ -1,11 +1,11 @@
-import express from "express";
-import "dotenv/config";
-import db from "./db/db.js";
-import cors from "cors";
-import { router } from "./routes/authRoutes.js";
-import { contactRoutes } from "./routes/contactRoutes.js";
-import { serviceRoutes } from "./routes/serviceRoutes.js";
-import { errorHandlerMiddleware } from "./middlewares/errorHandlerMiddleware.js";
+const express = require("express");
+require("dotenv/config");
+const db = require("./db/db.js");
+const cors = require("cors");
+const router = require("./routes/authRoutes.js");
+const contactRoutes = require("./routes/contactRoutes.js");
+const serviceRoutes = require("./routes/serviceRoutes.js");
+const errorHandlerMiddleware = require("./middlewares/errorHandlerMiddleware.js");
 const app = express();
 const port = process.env.PORT || 4000;
 

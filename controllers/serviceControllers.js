@@ -1,6 +1,6 @@
 import { Service } from "../models/serviceModel.js";
 
-export const Services = async (req, res, next) => {
+export const ServicesController = async (req, res, next) => {
   try {
     const response = await Service.find();
 

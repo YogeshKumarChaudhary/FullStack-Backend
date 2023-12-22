@@ -1,8 +1,8 @@
 const express = require("express");
 
-const ServicesController  = require("../controllers/serviceControllers.js");
+const Services  = require("../controllers/serviceControllers.js");
 
 const serviceRoutes = express.Router();
-serviceRoutes.get("/service", ServicesController);
+serviceRoutes.get("/service", Services);
 
 module.exports = serviceRoutes;
